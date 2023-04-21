@@ -12,7 +12,7 @@ mongoose.connect(dbUrl)
 router.get('/', validate,roleAdminGuard, async function(req,res,next) {
  try
  {
-  let users = await UserModel.find();
+  let users = await UserModel.find({},{password:0}); // find({what you want},{what you don't want})
   res.status(200).send({
     users,
     message:"Users Data Fetch Succesful!"

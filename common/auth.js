@@ -37,7 +37,7 @@ if(req.headers.authorization){ // token comes here
   ///1000 is for changing ms to seconds // newDate changes to number format
   next(); //' redirects to auth.js which function is next to validate
 } else{
-    res.status(402).send({message:"Token Expired"})
+    res.status(401).send({message:"Token Expired"})
 }
 }
   else{
